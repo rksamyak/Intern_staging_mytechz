@@ -8,6 +8,7 @@ import { searchJobsBranch } from '@/lib/ai/branches/search-jobs'
 import { howToApplyBranch } from '@/lib/ai/branches/how-to-apply'
 import { aboutBranch } from '@/lib/ai/branches/about'
 import { generalBranch } from '@/lib/ai/branches/general'
+import { resumeBranch } from '@/lib/ai/branches/resume'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -18,7 +19,7 @@ const BRANCHES = {
   search_jobs: searchJobsBranch,
   how_to_apply: howToApplyBranch,
   about_mytechz: aboutBranch,
-  resume_advice: generalBranch,
+  resume_advice: resumeBranch,
   general: generalBranch,
 }
 

@@ -24,7 +24,9 @@ const AI_ALLOW_PATHS = [
   '/jobs/ai',
   '/ai-tools',
   '/ai-tools/resume-builder',
+  '/ai-tools/resume-builder/templates',
   '/ai-tools/resume-analyzer',
+  '/ai-tools/resume-rank-checker',
   '/ai-tools/smart-job-search',
 ]
 

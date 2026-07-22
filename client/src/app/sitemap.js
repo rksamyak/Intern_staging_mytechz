@@ -16,7 +16,9 @@ export default async function sitemap() {
     // AI tools
     { url: `${SITE}/ai-tools`,                       lastModified: now, priority: 0.8,  changeFrequency: 'weekly'  },
     { url: `${SITE}/ai-tools/resume-builder`,        lastModified: now, priority: 0.85, changeFrequency: 'weekly'  },
+    { url: `${SITE}/ai-tools/resume-builder/templates`, lastModified: now, priority: 0.75, changeFrequency: 'weekly'  },
     { url: `${SITE}/ai-tools/resume-analyzer`,       lastModified: now, priority: 0.8,  changeFrequency: 'weekly'  },
+    { url: `${SITE}/ai-tools/resume-rank-checker`,   lastModified: now, priority: 0.8,  changeFrequency: 'weekly'  },
     { url: `${SITE}/ai-tools/smart-job-search`,      lastModified: now, priority: 0.75, changeFrequency: 'weekly'  },
     // Informational pages
     { url: `${SITE}/services`,                       lastModified: now, priority: 0.65, changeFrequency: 'monthly' },
