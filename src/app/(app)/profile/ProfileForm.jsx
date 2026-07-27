@@ -3,11 +3,16 @@
 import { useActionState, useState } from 'react'
 import { saveProfile } from './actions'
 import EducationSection from './components/EducationSection'
+import LanguageSection from "./components/LanguageSection";
+import LanguageView from "./components/LanguageView";
 const INITIAL = { ok: false, error: null }
 
 export default function ProfileForm({ defaultValues }) {
   const [state, formAction, pending] = useActionState(saveProfile, INITIAL)
   const [skillInput, setSkillInput] = useState(defaultValues.skills || '')
+  const [languages, setLanguages] = useState([]);
+
+const [isEditingLanguages, setIsEditingLanguages] = useState(true);
 
   const pills = skillInput
     ? skillInput.split(',').map((s) => s.trim()).filter(Boolean)
@@ -70,6 +75,30 @@ export default function ProfileForm({ defaultValues }) {
        
 
 <EducationSection />
+<div className="flex justify-between items-center mt-6">
+  <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
+    Languages
+  </h2>
+
+  <button
+    type="button"
+    onClick={() => setIsEditingLanguages(!isEditingLanguages)}
+    className="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+  >
+    {isEditingLanguages ? "View" : "Edit"}
+  </button>
+</div>
+
+{isEditingLanguages ? (
+  <LanguageSection
+    languages={languages}
+    setLanguages={setLanguages}
+  />
+) : (
+  <LanguageView
+    languages={languages}
+  />
+)}
       {/* Professional */}
       <section className="bg-white border border-gray-200 rounded-2xl p-6 space-y-4">
         <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">Professional</h2>
